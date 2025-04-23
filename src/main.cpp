@@ -28,7 +28,8 @@ PN532 nfc(pn532i2c);
 SoftwareSerial mySoftwareSerial(14, 13); // RX, TX Serial Comms using Software Serial RX --> TX, TX --> RX
 #define AudioBusyPin 16
 
-DFPlayerMini_Fast myMP3;
+#include "DFRobotDFPlayerMini.h"
+DFRobotDFPlayerMini myMP3;
 /*********************************************************************/
 
 /*************Wifi****************************************************/
@@ -191,7 +192,7 @@ void setup(void) {
   Serial.println(F("Audio online."));
   delay(750); //give time for things to settle and have a cup of tea.
   myMP3.volume(CurrentSettings.VolumeRoundRobin[CurrentSettings.initVolume]);  //Set default volume.
-  myMP3.EQSelect(0); // Set default EQ
+  myMP3.EQ(DFPLAYER_EQ_NORMAL); // Set default EQ
   // EQ_NORMAL       = 0;EQ_POP          = 1;EQ_ROCK         = 2;EQ_JAZZ         = 3;EQ_CLASSIC      = 4; EQ_BASE         = 5;
 
   /*********************************************************************/
@@ -220,7 +221,8 @@ void setup(void) {
   CurrentSettings.ReadStateMillis = millis();
 
   //Start up sound
-  myMP3.playFolder(1, 2);
+  // myMP3.playFolder(1, 2);
+  myMP3.playMp3Folder(7);
 }
 
 
@@ -310,7 +312,7 @@ void loop(void) {
           myMP3.pause();     
           delay(1000* randomNumber);
           Serial.println("Resume...");
-          myMP3.resume();
+          myMP3.start();
                    
       }
 
