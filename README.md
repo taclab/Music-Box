@@ -69,6 +69,19 @@ Connect components as follows:
    - `/01` for system sounds (connect, disconnect, error sounds)
    - `/02` for music tracks
 3. Add MP3 files numbered sequentially (001.mp3, 002.mp3, etc.)
+```
+.
+├── 01
+│   ├── 001.mp3 # Valid music card
+│   ├── 002.mp3 # Startup sound
+│   ├── 004.mp3 # Card not recognised
+│   ├── 005.mp3 # Card has been removed, play a nice sound
+│   └── 006.mp3 # Volume adjust
+│   └── 007.mp3 # Multiple cards detected, play a fun warning sound
+└── 02
+    ├── 001.mp3 # Sound
+    └── 00X.mp3
+```
 
 ## NFC Card Configuration
 
