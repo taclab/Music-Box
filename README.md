@@ -2,7 +2,7 @@
 
 An interactive music player that uses NFC cards to control playback. Perfect for children or interactive installations where physical objects trigger audio content.
 
-This project is a fork and enhancement of [Wilksy's Asher Music Box](https://github.com/wilksy/Asher-Music-Box), originally described in the ["Tiny Tonie" blog post](https://wilksy.com/tiny-tonie/). The original project was created as an alternative to commercial "Toniebox" audio players, focusing on providing a more affordable and customizable solution.
+This project is a fork of [Wilksy's Asher Music Box](https://github.com/wilksy/Asher-Music-Box), originally described in the ["Tiny Tonie" blog post](https://wilksy.com/tiny-tonie/). The original project was created as an alternative to commercial "Toniebox" audio players, focusing on providing a more affordable and customizable solution.
 
 ## Features
 
@@ -92,4 +92,4 @@ STL files for enclosure components are included in the `/docs/stl` directory. Th
 - Based on the "Asher Music Box" project by [Wilksy (2020)](https://wilksy.com/tiny-tonie/)
 - Original project repository: [github.com/wilksy/Asher-Music-Box](https://github.com/wilksy/Asher-Music-Box)
 - Updated with PlatformIO support and library improvements
-- Enhanced with additional documentation and code optimizations
+- Enhanced with additional documentation and code
