@@ -24,7 +24,6 @@ PN532 nfc(pn532i2c);
 /*************AudioPlayer****************************************************/
 #include "Arduino.h"
 #include "SoftwareSerial.h"
-#include <DFPlayerMini_Fast.h>
 SoftwareSerial mySoftwareSerial(14, 13); // RX, TX Serial Comms using Software Serial RX --> TX, TX --> RX
 #define AudioBusyPin 16
 
@@ -220,9 +219,8 @@ void setup(void) {
 
   CurrentSettings.ReadStateMillis = millis();
 
-  //Start up sound
-  // myMP3.playFolder(1, 2);
-  myMP3.playMp3Folder(7);
+  // Startup sound
+  myMP3.playFolder(1, 2);
 }
 
 
@@ -273,7 +271,6 @@ void loop(void) {
   }
 
   //check for a card removed
-
   if (((millis() - CurrentSettings.LastCardMillis) > CurrentSettings.LastCardThreshold) && CurrentSettings.isCardPresent) {
     CurrentSettings.PreviousCardUID = "";//CurrentCardUID;
     CurrentSettings.CurrentCardUID = "";
@@ -298,7 +295,6 @@ void loop(void) {
   }
 
   //check for Musical Chairs /Statue mode
-
   //we also wait two seconds after a track has started until we check to see if we need an eent
   if ((millis() - CurrentSettings.MilliStartPlaytime) > 2000 ) {
     if ( CurrentSettings.PlayingType > 0 && CurrentSettings.isMusicalChairsMode) {
